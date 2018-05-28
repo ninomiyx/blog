@@ -48,6 +48,7 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
 - `git add FILE_NAME` to add a file to local git repo's stage
 - `git commit` to commit (save) the staged files to local git repo
 - `git push` to push local git repo data to remote
+- `git log` to view the command history
 
 ## Genernal knowledge
 
