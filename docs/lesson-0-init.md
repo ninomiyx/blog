@@ -49,8 +49,10 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
 - `git commit` to commit (save) the staged files to local git repo
 - `git push` to push local git repo data to remote
 - `git log` to view the command history
-- `git diff` to see recent change diffs
+- `git diff` to see recent change diffs <br>
   `git diff --cached` to see added diffs
+- `git config --global user.name "xxx"` to change global user name, which is used in commit message <br>
+  `git config --global user.email "xxx@xxx"` to change global user email  
 
 ## Genernal knowledge
 
@@ -69,6 +71,7 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
 
 ## Genernal commands
 
+- `pwd` print current working directory
 - `cd` change directory, switch current working directory
 - `ls` list files / directories in the current directory
   `-l` to list as a list, alias to `ll`
