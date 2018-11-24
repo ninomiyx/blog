@@ -65,7 +65,8 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
   - the following 9 letters are grouped into 3-3-3 groups
     in each group, rwx, read / write / execute. Execute means a file can be executed or directory can be listed
     the three groups are for owner / group / other.
-- in `ls -l`, the 3rd and 4th are the owner and the group owner of the file; 5th is the size of the file / directory; 6th is the last modified time
+- in `ls -l`, the 3rd and 4th are the owner and the group owner of the file; 5th is the size of the file / directory; 6th is the last modified time <br>
+  `wxr` means write, excution, read
 - name `.` means current directory / `..` means parent directory
 
 
@@ -78,13 +79,18 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
   `-a` to list all files / directories (including those hidden)
   `-a` + `-l` can be typed as `-al`, so as some other commands
 - `mv` move (rename) file or directory
-- `rm` delete file or empty directory
+- `rm` delete file
   `-r` for deleting non-empty directory (r is short for recursive)
+- `rmdir` to remove empty directory
 - `chmod` change a file / directory's mode
-  `600` / `660` / `664`
-  `g-r-w` / `o-r` / `g+r`
+  `600` / `660` / `664` <br>
+  `760` means `111 110 000` = `rwxrw----`<br>
+  `+w` / `-r` means `owner` to... <br>
+  `g-r-w` / `g+r` means `group` to add or delete read / write <br>
+  `o-r` means `others` to...<br>
 - `chown` change the ownership of the file / directory
 - `touch` to create an empty file
 - `man COMMAND` to find the manual of a comman
   `q` for exit the man command
   `[]` means optional parameter
+- `mkdir` to creat a new directory
