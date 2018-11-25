@@ -4,7 +4,7 @@ Vue 是一个框架，可以帮助开发者很简单的通过模版语言将数�
 
 第一步，在网页前面到 `head` 标签插入 `<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>`，这样就可以在网页加载的时候，加载 Vue.js 框架。
 
-第二部，在 `body` 标签内，插入模版：
+第二步，在 `body` 标签内，插入模版：
 
 ```html
 <div id = "app">
@@ -63,4 +63,61 @@ function time() {
     var now = new Date(); // 创建一个时间日期对象，默认值是当前时间
     app.message = now.toLocaleTimeString();
 }
+```
+
+## Condition
+接下来，[这里](https://scrimba.com/p/pXKqta/cEQe4SJ)是Vue.js的一个condition教程。
+
+在 `body` 中添加模板：
+
+```html
+ <div id="app">
+    <span v-if="seen">Now you see me</span>
+</div>
+```
+
+其中，`v-` 指的是在 `Vue` 中特定的条件语句。
+
+接着，在在我们自己的 JavaScript 写以下代码：
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    seen: true
+  }
+})
+```
+
+当且仅当 `seen` 的指为 `true` 时，对应的 `span` 标签才会显示。
+
+## Countdowm
+
+扩展一下，如果刚才的例子用上述的条件模板，代码则可以改为：
+
+```html
+<div id="app">
+    <span v-if="progressing">Remians: {{timeLeft}}s.</span>
+    <span v-if="ended">Timeout.</span>
+</div>
+```
+
+JavaScript中可改为：
+
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    timeLeft : 10,
+    progressing: true,
+    ended : false,
+  }
+});
+
+function countDown() {
+  app.timeLeft = app.timeLeft - 1;
+  app.progressing = app.timeLeft >= 0;
+  app.ended = app.timeLeft < 0;
+}
+
+setInterval(countDown, 1000);
 ```
