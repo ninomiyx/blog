@@ -78,7 +78,7 @@ function time() {
 
 其中，`v-` 指的是在 `Vue` 中特定的条件语句。
 
-接着，在在我们自己的 JavaScript 写以下代码：
+接着，在我们自己的 JavaScript 写以下代码：
 ```js
 var app = new Vue({
   el: '#app',
@@ -121,3 +121,96 @@ function countDown() {
 
 setInterval(countDown, 1000);
 ```
+
+
+## For loops
+
+[这里](https://scrimba.com/p/pXKqta/cB4gESW) 是`Vue.js`的一个`for`循环教程。
+
+在`body`中添加模板：
+```html
+<div id="app">
+    <ol>
+        <li v-for="todo in todos">
+        {{ todo.text }}
+        </li>
+    </ol>
+</div>
+```
+- `<ol>`：有序排列标签，`1,2,3……`<br>
+  `<ul>`：无序排列标签，`·`
+- `<li>`：列表项，list items
+- `v-for="a in b"`：`b`为赋值范围。
+
+接着，在`JavaScript`中写下以下代码：
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+});
+```
+其中，若想添加`todos`的幅值范围，除了直接在上面`data`中加，还可以以以下方式：
+```js
+app.todos.push({ text: 'New item' })
+```
+
+## 用户输入
+### on-click
+
+[这里](https://scrimba.com/p/pXKqta/czPNaUr)是用户点击button，并回馈交互的教程。
+
+在`body`中添加模板：
+```html
+<div id="app">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+```
+接着，在`JavaScript`中写下以下代码：
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+```
+- `methods`：这个参数是用来放函数的，`function`
+- `this`：当前的上下文
+- `split('')`：拆开分解，eg，`abc` --- `"a""b""c"`，`split(`-`)`，拆解后则为`a-b-c`
+- `reverse()`：反转，abc ---- cba
+- `join('')`：和在一起，与`split`类似
+
+### V-model
+
+实现表单输入和应用状态之间的双向绑定，即改变`v-model`中`message`的内容，其他位置的`message`会跟着改变。点击[这里](https://scrimba.com/p/pXKqta/c9ePQT3)查看视频教程。
+
+在`body`中添加模板：
+```html
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+```
+
+接着，在`JavaScript`中写下以下代码：
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+```
+
