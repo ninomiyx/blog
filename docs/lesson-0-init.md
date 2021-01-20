@@ -43,12 +43,14 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
 
 - In Github navigation bar, `Plus button` / `New repository` to create a repo.
 - Open the newly created repo, click `Clone or download` to copy the SSH address of the repo.
-- Run `git clone SSH_ADDRESS`
+- Run `git clone SSH_ADDRESS` to build a local repo
 - `git status` to view local changes
 - `git add FILE_NAME` to add a file to local git repo's stage
 - `git commit` to commit (save) the staged files to local git repo
+- `git commit -m"some comments"` to add a comment to this commit
 - `git push` to push local git repo data to remote
-- `git log` to view the command history
+- `git log` to view command history
+- `git reflog` to view git history, `q` to quit 
 - `git diff` to see recent change diffs <br>
   `git diff --cached` to see added diffs
 - `git config --global user.name "xxx"` to change global user name, which is used in commit message <br>
