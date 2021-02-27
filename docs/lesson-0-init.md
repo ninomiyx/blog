@@ -47,21 +47,31 @@ We can run `cat /home/ec2-user/.ssh/id_rsa.pub` to view the public key. And copy
 - `git status` to view local changes
 - `git add FILE_NAME` to add a file to local git repo's stage
 - `git commit` to commit (save) the staged files to local git repo
+
 <br>
+
 git commit will use `vim` to edit the commimt message, there are several mode of vim:
 - by default is command mode, using `j / k / l / h` to navigate and other command
 - by `i` enter insert mode, edit the file
 - `esc` back to command mode, `:wq` to save and quite the file
+
 <br>
+
 - `git commit -m"some comments"` to add a comment to this commit
 - `git commit --amend` to combine the current commit and the previous one.
 - `git push` to push local git repo data to remote
+
 <br>
+
 when initialize a new repo, before `commit`, there are several commands neet to run:
-- git branch -M main  <!--change the name of branch "master" to "main"-->
-- git remote add origin git@github.com:ninomiyx/web-backend.git  <!--match the local repo to the remote repo in GitHub-->
-- git push -u origin main  <!--push-->
+- git branch -M main  
+change the name of branch "master" to "main"
+- git remote add origin git@github.com:ninomiyx/web-backend.git  
+match the local repo to the remote repo in GitHub
+- git push -u origin main
+
 <br>
+
 - `git log` to view command history
 - `git reflog` to view git history, `q` to quit 
 - `git diff` to see recent change diffs <br>
